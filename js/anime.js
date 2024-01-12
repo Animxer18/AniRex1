@@ -8,7 +8,7 @@ var id = url.searchParams.get("id");
 const errorContainer = document.createElement("div");
 errorContainer.style.color = "red";
 
-fetch('https://api.consumet.org/anime/enime/info?id=' + id)
+fetch('https://animxer-api-phi.vercel.app/anime/enime/info?id=' + id)
     .then(response => response.json())
     .then(data => {
         const anime = data;
@@ -70,7 +70,7 @@ const debouncedInput = debounce(function(event) {
 
     const query = document.querySelector("#query").value;
 
-    fetch('https://api.consumet.org/anime/enime/' + query)
+    fetch('https://animxer-api-phi.vercel.app/anime/enime/' + query)
         .then(response => response.json())
         .then(data => {
             data.results.slice(0, 4).forEach(result => {
