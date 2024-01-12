@@ -12,8 +12,8 @@ queryInput.addEventListener("input", function() {
 });
 
 
-const recentEpisodesUrl = 'https://api.consumet.org/anime/gogoanime/top-airing';
-const enimeBaseUrl = 'https://api.consumet.org/anime/enime/';
+const recentEpisodesUrl = 'https://animxer-api-phi.vercel.app/anime/gogoanime/top-airing';
+const enimeBaseUrl = 'https://animxer-api-phi.vercel.app/anime/enime/';
 
 // Fetch top airing episodes from gogoanime API, search it on enime and display
 fetch(recentEpisodesUrl)
