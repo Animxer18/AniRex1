@@ -32,7 +32,7 @@ fetch(recentEpisodesUrl)
                 .then(response => response.json())
                 .then(data => {
                     const enimeResult = data.results[0];
-                    // Display enime result in a card div
+                    // Display gogoanime result in a card div
                     const cardDiv = document.createElement('div');
 cardDiv.classList.add('card');
 cardDiv.style.width = "300px";
