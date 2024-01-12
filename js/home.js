@@ -13,7 +13,7 @@ queryInput.addEventListener("input", function() {
 
 
 const recentEpisodesUrl = 'https://animxer-api-phi.vercel.app/anime/gogoanime/top-airing';
-const enimeBaseUrl = 'https://animxer-api-phi.vercel.app/anime/gogoanime/';
+const gogoanimeBaseUrl = 'https://animxer-api-phi.vercel.app/anime/gogoanime/';
 
 // Fetch top airing episodes from gogoanime API, search it on enime and display
 fetch(recentEpisodesUrl)
@@ -27,7 +27,7 @@ fetch(recentEpisodesUrl)
         containerDiv.style.margin = "20px";
         results.forEach(result => {
             const animeTitle = result.title;
-            const enimeSearchUrl = enimeBaseUrl + animeTitle;
+            const enimeSearchUrl = gogoanimeBaseUrl + animeTitle;
             fetch(enimeSearchUrl)
                 .then(response => response.json())
                 .then(data => {
@@ -41,7 +41,7 @@ cardDiv.style.display = "flex";
 cardDiv.style.flexDirection = "column";
 
 const titleElement = document.createElement('h2');
-titleElement.textContent = enimeResult.title;
+titleElement.textContent = gogoanimeResult.title;
 titleElement.style.margin = "0";
 
 const linkElement = document.createElement('a');
@@ -54,7 +54,7 @@ imageElement.style.height = "350px";
 imageElement.style.width = "250px";
 
 const shortTitleElement = document.createElement('h2');
-var title = enimeResult.title;
+var title = gogoanimeResult.title;
 var shortTitle = title.substring(0, 50);
 if (title.length > 50)
     shortTitle += "...";
@@ -97,7 +97,7 @@ const debouncedInput = debounce(function(event) {
 
     const query = document.querySelector("#query").value;
 
-    fetch('https://api.consumet.org/anime/enime/' + query)
+    fetch('https://api.consumet.org/anime/gogoanime/' + query)
         .then(response => response.json())
         .then(data => {
             data.results.slice(0, 4).forEach(result => {
