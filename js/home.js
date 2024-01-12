@@ -13,7 +13,7 @@ queryInput.addEventListener("input", function() {
 
 
 const recentEpisodesUrl = 'https://animxer-api-phi.vercel.app/anime/gogoanime/top-airing';
-const enimeBaseUrl = 'https://animxer-api-phi.vercel.app/anime/enime/';
+const enimeBaseUrl = 'https://animxer-api-phi.vercel.app/anime/gogoanime/';
 
 // Fetch top airing episodes from gogoanime API, search it on enime and display
 fetch(recentEpisodesUrl)
